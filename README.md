@@ -17,8 +17,9 @@ Esse projeto é uma API Rest que tem como intuito permitir com que o usuário es
 
 # 🚀 Instalação
 
-1️⃣ Clone o repositório:  
 ```bash
+1️⃣ Clone o repositório:  
+
 git clone https://github.com/seu-usuario/api-usuarios.git  
 cd api-usuarios
 
