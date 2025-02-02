@@ -40,9 +40,8 @@ python manage.py runserver
 ```
 # ✨ Implementações futuras
 
-1. Criar o arquivo routes.py e lidar com todos os métodos https
-2. Implementar o sistema de autenticação e segurança
-3. Consumir a API utilizando React com TypeScript 
+1. Implementar o sistema de autenticação e segurança
+2. Consumir a API utilizando React com TypeScript 
 
 # 📄 Licença 
 
