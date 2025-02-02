@@ -24,15 +24,21 @@ def create_livro(request, livro_schema: LivrosSchema):
   return {'status':'ok'}
 
 @livros_router.put('/{livro_id}')
-def avaliation (request, livro_id: int, avaliation_schema: Avaliation_Schema):
-   coments = avaliation_schema.dict()['coments']
-   notice = avaliation_schema.dict()['notice']
+def avaliation(request, livro_id: int, avaliation_schema: Avaliation_Schema):
+    coments = avaliation_schema.dict()['coments']
+    notice = avaliation_schema.dict()['notice']
 
-   livro = Livros.objects.get(id=livro_id)
-   livro.coments = coments
-   livro.notice = notice
-   livro.save()
-   return 200, {'status': 'Avaliação realizada com sucesso'}
+    try:
+        livro = Livros.objects.get(id=livro_id)
+    except Livros.DoesNotExist:
+        return 404, {'status': 'Livro não encontrado'}
+
+    livro.coments = coments
+    livro.notice = notice
+    livro.save()
+
+    return 200, {'status': 'Avaliação realizada com sucesso'}
+
 
 @livros_router.delete('/{livro_id}')
 def delete_livro(request, livro_id: int):
